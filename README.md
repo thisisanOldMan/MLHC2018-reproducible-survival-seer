@@ -11,7 +11,20 @@ Repository overview:
 - **main.py**: Main routine to perform the experiments.
 - **requirements.txt**: Python dependencies (can be installed with pip, e.g. in a virtual environment).
 
-To execute main.py and reproduce our experiments Python3 (we used version 3.5.2) is necessary and all dependencies in requirements.txt must be satisfied. The easiest way would be to setup an according [virtual environment and to install requirements with pip](https://docs.python.org/3/tutorial/venv.html).
+To execute `main.py` yourself Python 3 is required (we recommend version 3.8 or later). Install the dependencies listed in `requirements.txt` via `pip` inside a virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Running in Google Colab
+
+The project can also be executed on Google Colab. A minimal example notebook is
+provided in `example/colab_example.ipynb` and performs the same experiment as
+shown below. Simply open the notebook in Colab and run the cells. Required
+Python packages are installed automatically.
 
 The option -h gives an overview of all command line arguments. Note that this code provides some additional functionality such as SVM models and survival regression that were not used for the paper's experiments.
 

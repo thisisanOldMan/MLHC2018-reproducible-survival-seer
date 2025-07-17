@@ -3,7 +3,7 @@ import datetime
 import os
 import random as rn
 import numpy as np
-from keras import backend as k
+from tensorflow.keras import backend as k
 import tensorflow as tf
 
 from lib import pipelines
@@ -21,10 +21,9 @@ def main():
     os.environ['PYTHONHASHSEED'] = '0'
     np.random.seed(91)
     rn.seed(95)
-    session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
-    tf.set_random_seed(47)
-    sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
-    k.set_session(sess)
+    tf.random.set_seed(47)
+    tf.config.threading.set_intra_op_parallelism_threads(1)
+    tf.config.threading.set_inter_op_parallelism_threads(1)
 
     # Enable simple logging
     logging.basicConfig(level=logging.INFO, format='%(message)s')
