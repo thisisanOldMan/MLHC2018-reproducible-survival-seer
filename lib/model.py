@@ -1,6 +1,6 @@
-import keras.models
-from keras.layers import Dense, Dropout, Input, Conv1D, Concatenate, Flatten
-from keras.utils.vis_utils import plot_model
+from tensorflow import keras
+from tensorflow.keras.layers import Dense, Dropout, Input, Conv1D, Concatenate, Flatten
+from tensorflow.keras.utils import plot_model
 import logging
 
 from sklearn.dummy import DummyRegressor, DummyClassifier
